@@ -1,0 +1,32 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public  class Main {
+    public static void main(String[] args) {
+        Scanner сканер = new Scanner(System.in);
+        Random случайноеЧисло = new Random();
+        int загаданноеЧисло = случайноеЧисло.nextInt(100) + 1;
+        int попытки = 0;
+        boolean угадал = false;
+
+        System.out.println("Добро пожаловать в игру 'Угадай число'!");
+        System.out.println("Число от 1 до 100.");
+
+        while (!угадал) {
+            System.out.print("Ввод числа: ");
+            int введённоеЧисло = сканер.nextInt();
+            попытки++;
+
+            if (введённоеЧисло < загаданноеЧисло) {
+                System.out.println("число больше.");
+            } else if (введённоеЧисло > загаданноеЧисло) {
+                System.out.println(" число меньше.");
+            } else {
+                угадал = true;
+                System.out.println("Поздравляем! Вы угадали число " + загаданноеЧисло + " с " + попытки + " попытки.");
+            }
+        }
+
+        System.out.println("Спасибо за игру!");
+    }
+}
